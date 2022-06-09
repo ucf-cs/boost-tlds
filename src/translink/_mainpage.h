@@ -67,7 +67,7 @@
  * 
  * mkdir temp <br>
  * cd temp <br>
- * git clone https://github.com/ucfcs/Fall2018-Group42-boost-tlds.git <br>
+ * git clone https://github.com/ucf-cs/boost-tlds.git <br>
  * (change "temp" folder name to "trans-dev") <br>
  * cd trans-dev <br>
  * bash bootstrap.sh <br>
