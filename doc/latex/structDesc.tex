@@ -1,0 +1,95 @@
+\hypertarget{structDesc}{}\section{Desc Struct Reference}
+\label{structDesc}\index{Desc@{Desc}}
+
+
+{\ttfamily \#include $<$data\+Objects.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static size\+\_\+t \hyperlink{structDesc_a17991ab3e594e316aba8e6f3016e1f02}{Size\+Of} (uint8\+\_\+t \hyperlink{structDesc_a1a146b0ca2a38b593e7605d66eb95a18}{size})
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+volatile uint8\+\_\+t \hyperlink{structDesc_a8ab3f25f43809ec536df5c68375010e2}{status}
+\item 
+uint8\+\_\+t \hyperlink{structDesc_a1a146b0ca2a38b593e7605d66eb95a18}{size}
+\item 
+Transactional\+Function \hyperlink{structDesc_a1d85f0de5ea67a2031e1675bab8acb5e}{function}
+\item 
+std\+::map$<$ std\+::string, int $>$ $\ast$ \hyperlink{structDesc_a8aacd8e82f593984cf4b792bbe0d0dff}{input\+Map}
+\item 
+std\+::map$<$ std\+::string, int $>$ $\ast$$\ast$ \hyperlink{structDesc_a41ba9397b67c78e2a45e49859dcdfff0}{output\+Map}
+\item 
+\hyperlink{structOperator}{Operator} \hyperlink{structDesc_a38e80352bf58db5502a73610210035d7}{ops} \mbox{[}M\+A\+X\+\_\+\+O\+PS\mbox{]}
+\item 
+Return\+Code $\ast$ \hyperlink{structDesc_aa3578181a26fc43b204648634e64546c}{return\+Value} \mbox{[}M\+A\+X\+\_\+\+O\+PS\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The descriptor object containing information about transactions to perform 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structDesc_a17991ab3e594e316aba8e6f3016e1f02}\label{structDesc_a17991ab3e594e316aba8e6f3016e1f02}} 
+\index{Desc@{Desc}!Size\+Of@{Size\+Of}}
+\index{Size\+Of@{Size\+Of}!Desc@{Desc}}
+\subsubsection{\texorpdfstring{Size\+Of()}{SizeOf()}}
+{\footnotesize\ttfamily static size\+\_\+t Desc\+::\+Size\+Of (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Calcuates the size of \hyperlink{structDesc}{Desc} Note\+: because we memalign by type\+Size, the size of this object needs to be a power of 2
+
+\begin{DoxyReturn}{Returns}
+The size of this descriptor 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structDesc_a1d85f0de5ea67a2031e1675bab8acb5e}\label{structDesc_a1d85f0de5ea67a2031e1675bab8acb5e}} 
+\index{Desc@{Desc}!function@{function}}
+\index{function@{function}!Desc@{Desc}}
+\subsubsection{\texorpdfstring{function}{function}}
+{\footnotesize\ttfamily Transactional\+Function Desc\+::function}
+
+A pointer to the transactional function \mbox{\Hypertarget{structDesc_a8aacd8e82f593984cf4b792bbe0d0dff}\label{structDesc_a8aacd8e82f593984cf4b792bbe0d0dff}} 
+\index{Desc@{Desc}!input\+Map@{input\+Map}}
+\index{input\+Map@{input\+Map}!Desc@{Desc}}
+\subsubsection{\texorpdfstring{input\+Map}{inputMap}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, int$>$$\ast$ Desc\+::input\+Map}
+
+The map containing the input values to the function \mbox{\Hypertarget{structDesc_a38e80352bf58db5502a73610210035d7}\label{structDesc_a38e80352bf58db5502a73610210035d7}} 
+\index{Desc@{Desc}!ops@{ops}}
+\index{ops@{ops}!Desc@{Desc}}
+\subsubsection{\texorpdfstring{ops}{ops}}
+{\footnotesize\ttfamily \hyperlink{structOperator}{Operator} Desc\+::ops\mbox{[}M\+A\+X\+\_\+\+O\+PS\mbox{]}}
+
+The operations to perform \mbox{\Hypertarget{structDesc_a41ba9397b67c78e2a45e49859dcdfff0}\label{structDesc_a41ba9397b67c78e2a45e49859dcdfff0}} 
+\index{Desc@{Desc}!output\+Map@{output\+Map}}
+\index{output\+Map@{output\+Map}!Desc@{Desc}}
+\subsubsection{\texorpdfstring{output\+Map}{outputMap}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, int$>$$\ast$$\ast$ Desc\+::output\+Map}
+
+A reference to a pointer to the output map of the function. The pointer referenced can be null. \mbox{\Hypertarget{structDesc_aa3578181a26fc43b204648634e64546c}\label{structDesc_aa3578181a26fc43b204648634e64546c}} 
+\index{Desc@{Desc}!return\+Value@{return\+Value}}
+\index{return\+Value@{return\+Value}!Desc@{Desc}}
+\subsubsection{\texorpdfstring{return\+Value}{returnValue}}
+{\footnotesize\ttfamily Return\+Code$\ast$ Desc\+::return\+Value\mbox{[}M\+A\+X\+\_\+\+O\+PS\mbox{]}}
+
+The list that stores to see if the operation has completed. \mbox{\Hypertarget{structDesc_a1a146b0ca2a38b593e7605d66eb95a18}\label{structDesc_a1a146b0ca2a38b593e7605d66eb95a18}} 
+\index{Desc@{Desc}!size@{size}}
+\index{size@{size}!Desc@{Desc}}
+\subsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily uint8\+\_\+t Desc\+::size}
+
+The number of operations \mbox{\Hypertarget{structDesc_a8ab3f25f43809ec536df5c68375010e2}\label{structDesc_a8ab3f25f43809ec536df5c68375010e2}} 
+\index{Desc@{Desc}!status@{status}}
+\index{status@{status}!Desc@{Desc}}
+\subsubsection{\texorpdfstring{status}{status}}
+{\footnotesize\ttfamily volatile uint8\+\_\+t Desc\+::status}
+
+The status of the operations 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/translink/data\+Objects.\+h\end{DoxyCompactItemize}

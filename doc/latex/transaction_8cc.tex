@@ -1,0 +1,49 @@
+\hypertarget{transaction_8cc}{}\section{src/translink/transaction.cc File Reference}
+\label{transaction_8cc}\index{src/translink/transaction.\+cc@{src/translink/transaction.\+cc}}
+{\ttfamily \#include \char`\"{}translink/transaction.\+h\char`\"{}}\newline
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\+\_\+\+\_\+thread \hyperlink{structHelpStack}{Help\+Stack} \hyperlink{transaction_8cc_ad626624dfd5f6a2004a2a3984b899c4c}{help\+Stack}
+\item 
+\+\_\+\+\_\+thread \hyperlink{structOnFinish}{On\+Finish} $\ast$ \hyperlink{transaction_8cc_acc4c93e87cc099c992935cf0587c3400}{on\+Commit} \mbox{[}256\mbox{]}
+\item 
+\+\_\+\+\_\+thread \hyperlink{structOnFinish}{On\+Finish} $\ast$ \hyperlink{transaction_8cc_a58530a903025875902ce996539f4dc05}{on\+Abort} \mbox{[}256\mbox{]}
+\item 
+\+\_\+\+\_\+thread uint32\+\_\+t \hyperlink{transaction_8cc_aadc0e54fe0b89fdbab1f57c406fcf863}{on\+Commit\+Index} = 0
+\item 
+\+\_\+\+\_\+thread uint32\+\_\+t \hyperlink{transaction_8cc_ac5777e46a426b1e939dd17825a48d034}{on\+Abort\+Index} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{transaction_8cc_ad626624dfd5f6a2004a2a3984b899c4c}\label{transaction_8cc_ad626624dfd5f6a2004a2a3984b899c4c}} 
+\index{transaction.\+cc@{transaction.\+cc}!help\+Stack@{help\+Stack}}
+\index{help\+Stack@{help\+Stack}!transaction.\+cc@{transaction.\+cc}}
+\subsubsection{\texorpdfstring{help\+Stack}{helpStack}}
+{\footnotesize\ttfamily \+\_\+\+\_\+thread \hyperlink{structHelpStack}{Help\+Stack} help\+Stack}
+
+Helpstack used in to help operations finish \mbox{\Hypertarget{transaction_8cc_a58530a903025875902ce996539f4dc05}\label{transaction_8cc_a58530a903025875902ce996539f4dc05}} 
+\index{transaction.\+cc@{transaction.\+cc}!on\+Abort@{on\+Abort}}
+\index{on\+Abort@{on\+Abort}!transaction.\+cc@{transaction.\+cc}}
+\subsubsection{\texorpdfstring{on\+Abort}{onAbort}}
+{\footnotesize\ttfamily \+\_\+\+\_\+thread \hyperlink{structOnFinish}{On\+Finish}$\ast$ on\+Abort\mbox{[}256\mbox{]}}
+
+\mbox{\Hypertarget{transaction_8cc_ac5777e46a426b1e939dd17825a48d034}\label{transaction_8cc_ac5777e46a426b1e939dd17825a48d034}} 
+\index{transaction.\+cc@{transaction.\+cc}!on\+Abort\+Index@{on\+Abort\+Index}}
+\index{on\+Abort\+Index@{on\+Abort\+Index}!transaction.\+cc@{transaction.\+cc}}
+\subsubsection{\texorpdfstring{on\+Abort\+Index}{onAbortIndex}}
+{\footnotesize\ttfamily \+\_\+\+\_\+thread uint32\+\_\+t on\+Abort\+Index = 0}
+
+\mbox{\Hypertarget{transaction_8cc_acc4c93e87cc099c992935cf0587c3400}\label{transaction_8cc_acc4c93e87cc099c992935cf0587c3400}} 
+\index{transaction.\+cc@{transaction.\+cc}!on\+Commit@{on\+Commit}}
+\index{on\+Commit@{on\+Commit}!transaction.\+cc@{transaction.\+cc}}
+\subsubsection{\texorpdfstring{on\+Commit}{onCommit}}
+{\footnotesize\ttfamily \+\_\+\+\_\+thread \hyperlink{structOnFinish}{On\+Finish}$\ast$ on\+Commit\mbox{[}256\mbox{]}}
+
+\mbox{\Hypertarget{transaction_8cc_aadc0e54fe0b89fdbab1f57c406fcf863}\label{transaction_8cc_aadc0e54fe0b89fdbab1f57c406fcf863}} 
+\index{transaction.\+cc@{transaction.\+cc}!on\+Commit\+Index@{on\+Commit\+Index}}
+\index{on\+Commit\+Index@{on\+Commit\+Index}!transaction.\+cc@{transaction.\+cc}}
+\subsubsection{\texorpdfstring{on\+Commit\+Index}{onCommitIndex}}
+{\footnotesize\ttfamily \+\_\+\+\_\+thread uint32\+\_\+t on\+Commit\+Index = 0}
+

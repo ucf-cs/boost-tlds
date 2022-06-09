@@ -1,0 +1,271 @@
+\hypertarget{classTransactionHandler}{}\section{Transaction\+Handler Class Reference}
+\label{classTransactionHandler}\index{Transaction\+Handler@{Transaction\+Handler}}
+
+
+{\ttfamily \#include $<$transaction.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTransactionHandler_a404c600bc3f9fd8371b3fdeaba9218eb}{Transaction\+Handler} (uint64\+\_\+t \hyperlink{classTransactionHandler_a2cf5ca7f79dbfed3c2a74524c510fce9}{cap}, uint64\+\_\+t \hyperlink{classTransactionHandler_aa836fefbe472dc6db2915ea723f148ef}{thread\+Count}, uint32\+\_\+t \hyperlink{classTransactionHandler_a9a2c1b281ece3123c6a18fc85a335ce4}{trans\+Size}, uint32\+\_\+t \hyperlink{classTransactionHandler_a97ca9af5f1ca5765520a73e5cd2fb554}{container\+Size})
+\item 
+bool \hyperlink{classTransactionHandler_a7f1d93e636488df03a246fd45fd53940}{Execute\+Ops} (const Set\+Op\+Array \&ops)
+\item 
+bool \hyperlink{classTransactionHandler_a95ade690079da04669ff14bbd2323052}{Execute\+Ops} (const Transactional\+Function txn\+Function, std\+::map$<$ std\+::string, int $>$ $\ast$input\+Map, std\+::map$<$ std\+::string, int $>$ $\ast$$\ast$output\+Map)
+\item 
+bool \hyperlink{classTransactionHandler_a692b676ca2167e5d5672b7f18ba72647}{Help\+Ops} (\hyperlink{structDesc}{Desc} $\ast$desc, uint8\+\_\+t opid)
+\item 
+bool \hyperlink{classTransactionHandler_a418edee7734a307fced6e4280e6fa5f0}{Help\+Ops} (\hyperlink{structDesc}{Desc} $\ast$desc)
+\item 
+\hyperlink{structDesc}{Desc} $\ast$ \hyperlink{classTransactionHandler_a6fccb1b26e250f6d4c2bcf4b196f7837}{Allocate\+Desc} (uint8\+\_\+t size)
+\item 
+void \hyperlink{classTransactionHandler_a9f45dc37682c5bee0f80785c0e79ce01}{Init} ()
+\item 
+void \hyperlink{classTransactionHandler_af5fb6686d702424f7fa6cc5e94f5696c}{Reset\+Metrics} ()
+\item 
+void \hyperlink{classTransactionHandler_a2e87e8be283890fd847fd8fb120a5537}{Print\+Metrics} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Return\+Code \hyperlink{classTransactionHandler_a0155e14e3f8f1a20f5962999c1bf91af}{Call\+Ops} (\hyperlink{structDesc}{Desc} $\ast$desc, \hyperlink{classTransactionalContainer}{Transactional\+Container} $\ast$list, Op\+Type op\+Type, setkey\+\_\+t key, int value, int \&found\+Value)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \hyperlink{classTransactionalContainer}{Transactional\+Container} $\ast$ $>$ \hyperlink{classTransactionHandler_a2ff242c44d06eb9fcceac93e703b377b}{containers}
+\item 
+uint32\+\_\+t \hyperlink{classTransactionHandler_aa0e3e84eac8fe9ee92c41ab61014fd3d}{g\+\_\+count\+\_\+commit} = 0
+\item 
+uint32\+\_\+t \hyperlink{classTransactionHandler_af87828161891a98e9910c937407876ab}{g\+\_\+count\+\_\+abort} = 0
+\item 
+uint32\+\_\+t \hyperlink{classTransactionHandler_a543da4f34515c10c92fcccd764dc2440}{g\+\_\+count\+\_\+fake\+\_\+abort} = 0
+\item 
+Allocator$<$ \hyperlink{structDesc}{Desc} $>$ \hyperlink{classTransactionHandler_a819bfbeebff4d0d591dd71e3890cfb5c}{m\+\_\+desc\+Allocator}
+\item 
+uint64\+\_\+t \hyperlink{classTransactionHandler_a2cf5ca7f79dbfed3c2a74524c510fce9}{cap}
+\item 
+uint64\+\_\+t \hyperlink{classTransactionHandler_aa836fefbe472dc6db2915ea723f148ef}{thread\+Count}
+\item 
+uint32\+\_\+t \hyperlink{classTransactionHandler_a9a2c1b281ece3123c6a18fc85a335ce4}{trans\+Size}
+\item 
+uint32\+\_\+t \hyperlink{classTransactionHandler_a97ca9af5f1ca5765520a73e5cd2fb554}{container\+Size}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Handles the allocation of Descriptor and \hyperlink{structNode}{Node} objects and facilitates the execution of transactions. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTransactionHandler_a404c600bc3f9fd8371b3fdeaba9218eb}\label{classTransactionHandler_a404c600bc3f9fd8371b3fdeaba9218eb}} 
+\index{Transaction\+Handler@{Transaction\+Handler}!Transaction\+Handler@{Transaction\+Handler}}
+\index{Transaction\+Handler@{Transaction\+Handler}!Transaction\+Handler@{Transaction\+Handler}}
+\subsubsection{\texorpdfstring{Transaction\+Handler()}{TransactionHandler()}}
+{\footnotesize\ttfamily Transaction\+Handler\+::\+Transaction\+Handler (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{cap,  }\item[{uint64\+\_\+t}]{thread\+Count,  }\item[{uint32\+\_\+t}]{trans\+Size,  }\item[{uint32\+\_\+t}]{container\+Size }\end{DoxyParamCaption})}
+
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+{\em cap} & the number of tests to run \\
+\hline
+{\em thread\+Count} & the number of threads to use \\
+\hline
+{\em trans\+Size} & the number of transactions per test \\
+\hline
+{\em container\+Size} & the number of containers per test \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classTransactionHandler_a6fccb1b26e250f6d4c2bcf4b196f7837}\label{classTransactionHandler_a6fccb1b26e250f6d4c2bcf4b196f7837}} 
+\index{Transaction\+Handler@{Transaction\+Handler}!Allocate\+Desc@{Allocate\+Desc}}
+\index{Allocate\+Desc@{Allocate\+Desc}!Transaction\+Handler@{Transaction\+Handler}}
+\subsubsection{\texorpdfstring{Allocate\+Desc()}{AllocateDesc()}}
+{\footnotesize\ttfamily \hyperlink{structDesc}{Desc} $\ast$ Transaction\+Handler\+::\+Allocate\+Desc (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+Allocates memory for the Descriptor object
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & the number of operations in the Descriptor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new descriptor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTransactionHandler_a0155e14e3f8f1a20f5962999c1bf91af}\label{classTransactionHandler_a0155e14e3f8f1a20f5962999c1bf91af}} 
+\index{Transaction\+Handler@{Transaction\+Handler}!Call\+Ops@{Call\+Ops}}
+\index{Call\+Ops@{Call\+Ops}!Transaction\+Handler@{Transaction\+Handler}}
+\subsubsection{\texorpdfstring{Call\+Ops()}{CallOps()}}
+{\footnotesize\ttfamily Return\+Code Transaction\+Handler\+::\+Call\+Ops (\begin{DoxyParamCaption}\item[{\hyperlink{structDesc}{Desc} $\ast$}]{desc,  }\item[{\hyperlink{classTransactionalContainer}{Transactional\+Container} $\ast$}]{list,  }\item[{Op\+Type}]{op\+Type,  }\item[{setkey\+\_\+t}]{key,  }\item[{int}]{value,  }\item[{int \&}]{found\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Runs specific operation that a user calls inside the function pointer that gets passed into Execute\+Ops.
+
+
+\begin{DoxyParams}{Parameters}
+{\em desc} & the Descriptor object for the transaction \\
+\hline
+{\em list} & the container to perform operations on \\
+\hline
+{\em op\+Type} & the type of operation \\
+\hline
+{\em key} & the Key value for the node \\
+\hline
+{\em value} & the value to insert (for I\+N\+S\+E\+RT operations) \\
+\hline
+{\em found\+Value} & a reference variable to set to the found value (for F\+I\+ND operations). Is not set if the key is not found. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the return code; whether the operation was OK, A\+B\+O\+R\+T\+ED, or S\+K\+I\+P\+P\+ED 
+\end{DoxyReturn}
+This operator variable holds the operation being performed. The desc-\/$>$ops\mbox{[}\mbox{]} in this implementation is different from the non-\/transactional implementation where it carries a L\+I\+ST of operations to perform instead.\mbox{\Hypertarget{classTransactionHandler_a7f1d93e636488df03a246fd45fd53940}\label{classTransactionHandler_a7f1d93e636488df03a246fd45fd53940}} 
+\index{Transaction\+Handler@{Transaction\+Handler}!Execute\+Ops@{Execute\+Ops}}
+\index{Execute\+Ops@{Execute\+Ops}!Transaction\+Handler@{Transaction\+Handler}}
+\subsubsection{\texorpdfstring{Execute\+Ops()}{ExecuteOps()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Transaction\+Handler\+::\+Execute\+Ops (\begin{DoxyParamCaption}\item[{const Set\+Op\+Array \&}]{ops }\end{DoxyParamCaption})}
+
+Executes the operations in {\itshape ops} on the list
+
+
+\begin{DoxyParams}{Parameters}
+{\em ops} & the operations to perform on the list\\
+\hline
+\end{DoxyParams}
+Version of execute ops that takes in a list of operations to perform in a single transaction. (Non-\/\+D\+TT) \mbox{\Hypertarget{classTransactionHandler_a95ade690079da04669ff14bbd2323052}\label{classTransactionHandler_a95ade690079da04669ff14bbd2323052}} 
+\index{Transaction\+Handler@{Transaction\+Handler}!Execute\+Ops@{Execute\+Ops}}
+\index{Execute\+Ops@{Execute\+Ops}!Transaction\+Handler@{Transaction\+Handler}}
+\subsubsection{\texorpdfstring{Execute\+Ops()}{ExecuteOps()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Transaction\+Handler\+::\+Execute\+Ops (\begin{DoxyParamCaption}\item[{const Transactional\+Function}]{txn\+Function,  }\item[{std\+::map$<$ std\+::string, int $>$ $\ast$}]{input\+Map,  }\item[{std\+::map$<$ std\+::string, int $>$ $\ast$$\ast$}]{output\+Map }\end{DoxyParamCaption})}
+
+Executes the operation defined by {\itshape txn\+Function} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em txn\+Function} & the operation to perform on the list \\
+\hline
+{\em input\+Map} & the map containing input values \\
+\hline
+{\em output\+Map} & a pointer to a pointer of a map containing input values. The reference to the pointer can be null. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if none of the transaction was not aborted
+\end{DoxyReturn}
+Version of execute ops that is used in dynamic transactions ehich takes in a function pointer, an input map, and an output map. \mbox{\Hypertarget{classTransactionHandler_a692b676ca2167e5d5672b7f18ba72647}\label{classTransactionHandler_a692b676ca2167e5d5672b7f18ba72647}} 
+\index{Transaction\+Handler@{Transaction\+Handler}!Help\+Ops@{Help\+Ops}}
+\index{Help\+Ops@{Help\+Ops}!Transaction\+Handler@{Transaction\+Handler}}
+\subsubsection{\texorpdfstring{Help\+Ops()}{HelpOps()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Transaction\+Handler\+::\+Help\+Ops (\begin{DoxyParamCaption}\item[{\hyperlink{structDesc}{Desc} $\ast$}]{desc,  }\item[{uint8\+\_\+t}]{opid }\end{DoxyParamCaption})}
+
+Helps finish the operation of any currently pending transaction in the Descriptor
+
+
+\begin{DoxyParams}{Parameters}
+{\em desc} & the Descriptor object \\
+\hline
+{\em opid} & the id (index) of the operation in the descriptor to help finish \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the help operation was successful (no aborts) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTransactionHandler_a418edee7734a307fced6e4280e6fa5f0}\label{classTransactionHandler_a418edee7734a307fced6e4280e6fa5f0}} 
+\index{Transaction\+Handler@{Transaction\+Handler}!Help\+Ops@{Help\+Ops}}
+\index{Help\+Ops@{Help\+Ops}!Transaction\+Handler@{Transaction\+Handler}}
+\subsubsection{\texorpdfstring{Help\+Ops()}{HelpOps()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Transaction\+Handler\+::\+Help\+Ops (\begin{DoxyParamCaption}\item[{\hyperlink{structDesc}{Desc} $\ast$}]{desc }\end{DoxyParamCaption})}
+
+Helps finish the operation of any currently pending transaction in the Descriptor. This method is used for transactional functions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em desc} & the Descriptor object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the help operation was successful (no aborts)
+\end{DoxyReturn}
+definition of the helping scheme in dynamic transactions \mbox{\Hypertarget{classTransactionHandler_a9f45dc37682c5bee0f80785c0e79ce01}\label{classTransactionHandler_a9f45dc37682c5bee0f80785c0e79ce01}} 
+\index{Transaction\+Handler@{Transaction\+Handler}!Init@{Init}}
+\index{Init@{Init}!Transaction\+Handler@{Transaction\+Handler}}
+\subsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Transaction\+Handler\+::\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Initializes the transaction handler, specifically all of the memory allocators as well as any specified by the lists that might be used in an operation \mbox{\Hypertarget{classTransactionHandler_a2e87e8be283890fd847fd8fb120a5537}\label{classTransactionHandler_a2e87e8be283890fd847fd8fb120a5537}} 
+\index{Transaction\+Handler@{Transaction\+Handler}!Print\+Metrics@{Print\+Metrics}}
+\index{Print\+Metrics@{Print\+Metrics}!Transaction\+Handler@{Transaction\+Handler}}
+\subsubsection{\texorpdfstring{Print\+Metrics()}{PrintMetrics()}}
+{\footnotesize\ttfamily void Transaction\+Handler\+::\+Print\+Metrics (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Prints metrics \mbox{\Hypertarget{classTransactionHandler_af5fb6686d702424f7fa6cc5e94f5696c}\label{classTransactionHandler_af5fb6686d702424f7fa6cc5e94f5696c}} 
+\index{Transaction\+Handler@{Transaction\+Handler}!Reset\+Metrics@{Reset\+Metrics}}
+\index{Reset\+Metrics@{Reset\+Metrics}!Transaction\+Handler@{Transaction\+Handler}}
+\subsubsection{\texorpdfstring{Reset\+Metrics()}{ResetMetrics()}}
+{\footnotesize\ttfamily void Transaction\+Handler\+::\+Reset\+Metrics (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Resets the metrics 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classTransactionHandler_a2cf5ca7f79dbfed3c2a74524c510fce9}\label{classTransactionHandler_a2cf5ca7f79dbfed3c2a74524c510fce9}} 
+\index{Transaction\+Handler@{Transaction\+Handler}!cap@{cap}}
+\index{cap@{cap}!Transaction\+Handler@{Transaction\+Handler}}
+\subsubsection{\texorpdfstring{cap}{cap}}
+{\footnotesize\ttfamily uint64\+\_\+t Transaction\+Handler\+::cap}
+
+The number of tests to run \mbox{\Hypertarget{classTransactionHandler_a2ff242c44d06eb9fcceac93e703b377b}\label{classTransactionHandler_a2ff242c44d06eb9fcceac93e703b377b}} 
+\index{Transaction\+Handler@{Transaction\+Handler}!containers@{containers}}
+\index{containers@{containers}!Transaction\+Handler@{Transaction\+Handler}}
+\subsubsection{\texorpdfstring{containers}{containers}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{classTransactionalContainer}{Transactional\+Container}$\ast$$>$ Transaction\+Handler\+::containers}
+
+The list of containers that will be operated on during transactions. Used to call the \hyperlink{classTransactionHandler_a9f45dc37682c5bee0f80785c0e79ce01}{Init()} method. \mbox{\Hypertarget{classTransactionHandler_a97ca9af5f1ca5765520a73e5cd2fb554}\label{classTransactionHandler_a97ca9af5f1ca5765520a73e5cd2fb554}} 
+\index{Transaction\+Handler@{Transaction\+Handler}!container\+Size@{container\+Size}}
+\index{container\+Size@{container\+Size}!Transaction\+Handler@{Transaction\+Handler}}
+\subsubsection{\texorpdfstring{container\+Size}{containerSize}}
+{\footnotesize\ttfamily uint32\+\_\+t Transaction\+Handler\+::container\+Size}
+
+The number of containers per test \mbox{\Hypertarget{classTransactionHandler_af87828161891a98e9910c937407876ab}\label{classTransactionHandler_af87828161891a98e9910c937407876ab}} 
+\index{Transaction\+Handler@{Transaction\+Handler}!g\+\_\+count\+\_\+abort@{g\+\_\+count\+\_\+abort}}
+\index{g\+\_\+count\+\_\+abort@{g\+\_\+count\+\_\+abort}!Transaction\+Handler@{Transaction\+Handler}}
+\subsubsection{\texorpdfstring{g\+\_\+count\+\_\+abort}{g\_count\_abort}}
+{\footnotesize\ttfamily uint32\+\_\+t Transaction\+Handler\+::g\+\_\+count\+\_\+abort = 0}
+
+The total number of aborts \mbox{\Hypertarget{classTransactionHandler_aa0e3e84eac8fe9ee92c41ab61014fd3d}\label{classTransactionHandler_aa0e3e84eac8fe9ee92c41ab61014fd3d}} 
+\index{Transaction\+Handler@{Transaction\+Handler}!g\+\_\+count\+\_\+commit@{g\+\_\+count\+\_\+commit}}
+\index{g\+\_\+count\+\_\+commit@{g\+\_\+count\+\_\+commit}!Transaction\+Handler@{Transaction\+Handler}}
+\subsubsection{\texorpdfstring{g\+\_\+count\+\_\+commit}{g\_count\_commit}}
+{\footnotesize\ttfamily uint32\+\_\+t Transaction\+Handler\+::g\+\_\+count\+\_\+commit = 0}
+
+The total number of committed transactions \mbox{\Hypertarget{classTransactionHandler_a543da4f34515c10c92fcccd764dc2440}\label{classTransactionHandler_a543da4f34515c10c92fcccd764dc2440}} 
+\index{Transaction\+Handler@{Transaction\+Handler}!g\+\_\+count\+\_\+fake\+\_\+abort@{g\+\_\+count\+\_\+fake\+\_\+abort}}
+\index{g\+\_\+count\+\_\+fake\+\_\+abort@{g\+\_\+count\+\_\+fake\+\_\+abort}!Transaction\+Handler@{Transaction\+Handler}}
+\subsubsection{\texorpdfstring{g\+\_\+count\+\_\+fake\+\_\+abort}{g\_count\_fake\_abort}}
+{\footnotesize\ttfamily uint32\+\_\+t Transaction\+Handler\+::g\+\_\+count\+\_\+fake\+\_\+abort = 0}
+
+The number of fake aborts \mbox{\Hypertarget{classTransactionHandler_a819bfbeebff4d0d591dd71e3890cfb5c}\label{classTransactionHandler_a819bfbeebff4d0d591dd71e3890cfb5c}} 
+\index{Transaction\+Handler@{Transaction\+Handler}!m\+\_\+desc\+Allocator@{m\+\_\+desc\+Allocator}}
+\index{m\+\_\+desc\+Allocator@{m\+\_\+desc\+Allocator}!Transaction\+Handler@{Transaction\+Handler}}
+\subsubsection{\texorpdfstring{m\+\_\+desc\+Allocator}{m\_descAllocator}}
+{\footnotesize\ttfamily Allocator$<$\hyperlink{structDesc}{Desc}$>$ Transaction\+Handler\+::m\+\_\+desc\+Allocator}
+
+The allocator for the Descriptor \mbox{\Hypertarget{classTransactionHandler_aa836fefbe472dc6db2915ea723f148ef}\label{classTransactionHandler_aa836fefbe472dc6db2915ea723f148ef}} 
+\index{Transaction\+Handler@{Transaction\+Handler}!thread\+Count@{thread\+Count}}
+\index{thread\+Count@{thread\+Count}!Transaction\+Handler@{Transaction\+Handler}}
+\subsubsection{\texorpdfstring{thread\+Count}{threadCount}}
+{\footnotesize\ttfamily uint64\+\_\+t Transaction\+Handler\+::thread\+Count}
+
+The number of threads to use \mbox{\Hypertarget{classTransactionHandler_a9a2c1b281ece3123c6a18fc85a335ce4}\label{classTransactionHandler_a9a2c1b281ece3123c6a18fc85a335ce4}} 
+\index{Transaction\+Handler@{Transaction\+Handler}!trans\+Size@{trans\+Size}}
+\index{trans\+Size@{trans\+Size}!Transaction\+Handler@{Transaction\+Handler}}
+\subsubsection{\texorpdfstring{trans\+Size}{transSize}}
+{\footnotesize\ttfamily uint32\+\_\+t Transaction\+Handler\+::trans\+Size}
+
+The number of transactions per test 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/translink/transaction.\+h\item 
+src/translink/transaction.\+cc\end{DoxyCompactItemize}

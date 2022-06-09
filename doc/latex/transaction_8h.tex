@@ -1,0 +1,58 @@
+\hypertarget{transaction_8h}{}\section{src/translink/transaction.h File Reference}
+\label{transaction_8h}\index{src/translink/transaction.\+h@{src/translink/transaction.\+h}}
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}common/assert.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common/allocator.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}translink/data\+Objects.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}translink/list/translist.\+h\char`\"{}}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classTransactionHandler}{Transaction\+Handler}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{transaction_8h_ae30687225c8f14173511d0dccedea716}{S\+E\+T\+\_\+\+M\+A\+RK}(\+\_\+p)~((\hyperlink{structNode}{Node} $\ast$)(((uintptr\+\_\+t)(\+\_\+p)) $\vert$ 1))
+\item 
+\#define \hyperlink{transaction_8h_a79fb2f1c41f7a9308694dd8c06a8db2e}{C\+L\+R\+\_\+\+M\+A\+RK}(\+\_\+p)~((\hyperlink{structNode}{Node} $\ast$)(((uintptr\+\_\+t)(\+\_\+p)) \& $\sim$1))
+\item 
+\#define \hyperlink{transaction_8h_a7bd1dc6e2afa5f73f39d6dbc604b8b8f}{C\+L\+R\+\_\+\+M\+A\+R\+KD}(\+\_\+p)~((\hyperlink{structNodeDesc}{Node\+Desc} $\ast$)(((uintptr\+\_\+t)(\+\_\+p)) \& $\sim$1))
+\item 
+\#define \hyperlink{transaction_8h_a5045996183a50435fa2685920b8ea19f}{I\+S\+\_\+\+M\+A\+R\+K\+ED}(\+\_\+p)~(((uintptr\+\_\+t)(\+\_\+p)) \& 1)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{transaction_8h_a79fb2f1c41f7a9308694dd8c06a8db2e}\label{transaction_8h_a79fb2f1c41f7a9308694dd8c06a8db2e}} 
+\index{transaction.\+h@{transaction.\+h}!C\+L\+R\+\_\+\+M\+A\+RK@{C\+L\+R\+\_\+\+M\+A\+RK}}
+\index{C\+L\+R\+\_\+\+M\+A\+RK@{C\+L\+R\+\_\+\+M\+A\+RK}!transaction.\+h@{transaction.\+h}}
+\subsubsection{\texorpdfstring{C\+L\+R\+\_\+\+M\+A\+RK}{CLR\_MARK}}
+{\footnotesize\ttfamily \#define C\+L\+R\+\_\+\+M\+A\+RK(\begin{DoxyParamCaption}\item[{}]{\+\_\+p }\end{DoxyParamCaption})~((\hyperlink{structNode}{Node} $\ast$)(((uintptr\+\_\+t)(\+\_\+p)) \& $\sim$1))}
+
+\mbox{\Hypertarget{transaction_8h_a7bd1dc6e2afa5f73f39d6dbc604b8b8f}\label{transaction_8h_a7bd1dc6e2afa5f73f39d6dbc604b8b8f}} 
+\index{transaction.\+h@{transaction.\+h}!C\+L\+R\+\_\+\+M\+A\+R\+KD@{C\+L\+R\+\_\+\+M\+A\+R\+KD}}
+\index{C\+L\+R\+\_\+\+M\+A\+R\+KD@{C\+L\+R\+\_\+\+M\+A\+R\+KD}!transaction.\+h@{transaction.\+h}}
+\subsubsection{\texorpdfstring{C\+L\+R\+\_\+\+M\+A\+R\+KD}{CLR\_MARKD}}
+{\footnotesize\ttfamily \#define C\+L\+R\+\_\+\+M\+A\+R\+KD(\begin{DoxyParamCaption}\item[{}]{\+\_\+p }\end{DoxyParamCaption})~((\hyperlink{structNodeDesc}{Node\+Desc} $\ast$)(((uintptr\+\_\+t)(\+\_\+p)) \& $\sim$1))}
+
+\mbox{\Hypertarget{transaction_8h_a5045996183a50435fa2685920b8ea19f}\label{transaction_8h_a5045996183a50435fa2685920b8ea19f}} 
+\index{transaction.\+h@{transaction.\+h}!I\+S\+\_\+\+M\+A\+R\+K\+ED@{I\+S\+\_\+\+M\+A\+R\+K\+ED}}
+\index{I\+S\+\_\+\+M\+A\+R\+K\+ED@{I\+S\+\_\+\+M\+A\+R\+K\+ED}!transaction.\+h@{transaction.\+h}}
+\subsubsection{\texorpdfstring{I\+S\+\_\+\+M\+A\+R\+K\+ED}{IS\_MARKED}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+M\+A\+R\+K\+ED(\begin{DoxyParamCaption}\item[{}]{\+\_\+p }\end{DoxyParamCaption})~(((uintptr\+\_\+t)(\+\_\+p)) \& 1)}
+
+\mbox{\Hypertarget{transaction_8h_ae30687225c8f14173511d0dccedea716}\label{transaction_8h_ae30687225c8f14173511d0dccedea716}} 
+\index{transaction.\+h@{transaction.\+h}!S\+E\+T\+\_\+\+M\+A\+RK@{S\+E\+T\+\_\+\+M\+A\+RK}}
+\index{S\+E\+T\+\_\+\+M\+A\+RK@{S\+E\+T\+\_\+\+M\+A\+RK}!transaction.\+h@{transaction.\+h}}
+\subsubsection{\texorpdfstring{S\+E\+T\+\_\+\+M\+A\+RK}{SET\_MARK}}
+{\footnotesize\ttfamily \#define S\+E\+T\+\_\+\+M\+A\+RK(\begin{DoxyParamCaption}\item[{}]{\+\_\+p }\end{DoxyParamCaption})~((\hyperlink{structNode}{Node} $\ast$)(((uintptr\+\_\+t)(\+\_\+p)) $\vert$ 1))}
+
+Transaction class
+
+Handles the allocation of Descriptor and \hyperlink{structNode}{Node} objects and facilitates the execution of transactions. methodology for logically marking and unmarking a node 

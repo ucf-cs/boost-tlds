@@ -1,0 +1,231 @@
+\hypertarget{dataObjects_8h}{}\section{src/translink/data\+Objects.h File Reference}
+\label{dataObjects_8h}\index{src/translink/data\+Objects.\+h@{src/translink/data\+Objects.\+h}}
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$tgmath.\+h$>$}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structOperator}{Operator}
+\item 
+struct \hyperlink{structDesc}{Desc}
+\item 
+struct \hyperlink{structNodeDesc}{Node\+Desc}
+\item 
+struct \hyperlink{structNode}{Node}
+\item 
+struct \hyperlink{structOnFinish}{On\+Finish}
+\item 
+struct \hyperlink{structHelpStack}{Help\+Stack}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{dataObjects_8h_ab122432988c73c06becf1ce34077e43b}{N\+U\+M\+\_\+\+L\+E\+V\+E\+LS}~29
+\item 
+\#define \hyperlink{dataObjects_8h_a2fed141c7fbaebdd5e334544a2d8a3bb}{M\+A\+X\+\_\+\+O\+PS}~256
+\item 
+\#define \hyperlink{dataObjects_8h_aa71742aab7060a6a1c9c74ad558c0128}{L\+E\+V\+E\+L\+\_\+\+M\+A\+SK}~0x0ff
+\item 
+\#define \hyperlink{dataObjects_8h_aa446fba61d38f15700f9bb749aaee7c9}{R\+E\+A\+D\+Y\+\_\+\+F\+O\+R\+\_\+\+F\+R\+EE}~0x100
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned long \hyperlink{dataObjects_8h_a3945a06384f87c28e0642d51b0524e92}{setkey\+\_\+t}
+\item 
+typedef void $\ast$ \hyperlink{dataObjects_8h_a07e25227a67b4e708996b09fd575408b}{setval\+\_\+t}
+\item 
+typedef std\+::vector$<$ \hyperlink{structOperator}{Operator} $>$ \hyperlink{dataObjects_8h_a50648b6d26556a2eb5938738c90e8e14}{Set\+Op\+Array}
+\item 
+typedef \hyperlink{dataObjects_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}($\ast$ \hyperlink{dataObjects_8h_a42ab60919a821baeb3b2546676f467aa}{Transactional\+Function}) (\hyperlink{structDesc}{Desc} $\ast$desc, std\+::map$<$ std\+::string, int $>$ \&)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{dataObjects_8h_a20c009e97710992c3cadf8e336e053b1}{Data\+Structure} \{ \newline
+\hyperlink{dataObjects_8h_a20c009e97710992c3cadf8e336e053b1a0af371673f8666000023636a0f869c89}{T\+X\+N\+L\+I\+ST} = 0, 
+\hyperlink{dataObjects_8h_a20c009e97710992c3cadf8e336e053b1ad560f730bc1290d49bc6b0257384eed5}{S\+T\+M\+L\+I\+ST} = 1, 
+\hyperlink{dataObjects_8h_a20c009e97710992c3cadf8e336e053b1a55e8de424329601a609b31bb73c932bd}{B\+S\+T\+L\+I\+ST} = 2, 
+\hyperlink{dataObjects_8h_a20c009e97710992c3cadf8e336e053b1a8b16a732bca8552a5cbaeee7c5b5594f}{T\+X\+N\+S\+K\+IP} = 3, 
+\newline
+\hyperlink{dataObjects_8h_a20c009e97710992c3cadf8e336e053b1a16f7d6beda6cde54bc7eff9a278f8c2d}{B\+S\+T\+S\+K\+IP} = 4, 
+\hyperlink{dataObjects_8h_a20c009e97710992c3cadf8e336e053b1a65192c6fe9b391ed92d29387cc8f6c8d}{S\+T\+M\+S\+K\+IP} = 5, 
+\hyperlink{dataObjects_8h_a20c009e97710992c3cadf8e336e053b1ae22fc6b231b11608093dfaa601dc95d0}{T\+X\+N\+S\+M\+AP} = 6, 
+\hyperlink{dataObjects_8h_a20c009e97710992c3cadf8e336e053b1a33420fa988ed94e329eae5aeeeea4124}{T\+X\+N\+L\+M\+AP} = 7
+ \}
+\item 
+enum \hyperlink{dataObjects_8h_af9e675a7980d5ac679b868f4ac463c25}{Op\+Status} \{ \hyperlink{dataObjects_8h_af9e675a7980d5ac679b868f4ac463c25a33cf1d8ef1d06ee698a7fabf40eb3a7f}{A\+C\+T\+I\+VE} = 0, 
+\hyperlink{dataObjects_8h_af9e675a7980d5ac679b868f4ac463c25a9b6890d649a5ed95ee892f10e432e6ac}{C\+O\+M\+M\+I\+T\+T\+ED}, 
+\hyperlink{dataObjects_8h_af9e675a7980d5ac679b868f4ac463c25a3ae09818606786b529d9ca89180fa29a}{A\+B\+O\+R\+T\+ED}
+ \}
+\item 
+enum \hyperlink{dataObjects_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code} \{ \hyperlink{dataObjects_8h_a5a2236a3693e3930b2c9fbe1fe7144eca2bc49ec37d6a5715dd23e85f1ff5bb59}{OK} = 0, 
+\hyperlink{dataObjects_8h_a5a2236a3693e3930b2c9fbe1fe7144eca998eded080e73768c0b44bf4891df984}{S\+K\+IP}, 
+\hyperlink{dataObjects_8h_a5a2236a3693e3930b2c9fbe1fe7144eca936c4a5547a9360243178f726f6b2715}{F\+A\+IL}
+ \}
+\item 
+enum \hyperlink{dataObjects_8h_aa1aa1c6a8f3bbed5b167bc2d4511b969}{Op\+Type} \{ \hyperlink{dataObjects_8h_aa1aa1c6a8f3bbed5b167bc2d4511b969a8f189475707a2b69614aeb6c6904a6df}{F\+I\+ND} = 0, 
+\hyperlink{dataObjects_8h_aa1aa1c6a8f3bbed5b167bc2d4511b969aa15c451953b2d2a93403afe786930d0f}{I\+N\+S\+E\+RT}, 
+\hyperlink{dataObjects_8h_aa1aa1c6a8f3bbed5b167bc2d4511b969a9d61e82a9a12752f10aece1b22183913}{D\+E\+L\+E\+TE}
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{dataObjects_8h_aa71742aab7060a6a1c9c74ad558c0128}\label{dataObjects_8h_aa71742aab7060a6a1c9c74ad558c0128}} 
+\index{data\+Objects.\+h@{data\+Objects.\+h}!L\+E\+V\+E\+L\+\_\+\+M\+A\+SK@{L\+E\+V\+E\+L\+\_\+\+M\+A\+SK}}
+\index{L\+E\+V\+E\+L\+\_\+\+M\+A\+SK@{L\+E\+V\+E\+L\+\_\+\+M\+A\+SK}!data\+Objects.\+h@{data\+Objects.\+h}}
+\subsubsection{\texorpdfstring{L\+E\+V\+E\+L\+\_\+\+M\+A\+SK}{LEVEL\_MASK}}
+{\footnotesize\ttfamily \#define L\+E\+V\+E\+L\+\_\+\+M\+A\+SK~0x0ff}
+
+\mbox{\Hypertarget{dataObjects_8h_a2fed141c7fbaebdd5e334544a2d8a3bb}\label{dataObjects_8h_a2fed141c7fbaebdd5e334544a2d8a3bb}} 
+\index{data\+Objects.\+h@{data\+Objects.\+h}!M\+A\+X\+\_\+\+O\+PS@{M\+A\+X\+\_\+\+O\+PS}}
+\index{M\+A\+X\+\_\+\+O\+PS@{M\+A\+X\+\_\+\+O\+PS}!data\+Objects.\+h@{data\+Objects.\+h}}
+\subsubsection{\texorpdfstring{M\+A\+X\+\_\+\+O\+PS}{MAX\_OPS}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+O\+PS~256}
+
+The maximum number of operations supported in a transaciton \mbox{\Hypertarget{dataObjects_8h_ab122432988c73c06becf1ce34077e43b}\label{dataObjects_8h_ab122432988c73c06becf1ce34077e43b}} 
+\index{data\+Objects.\+h@{data\+Objects.\+h}!N\+U\+M\+\_\+\+L\+E\+V\+E\+LS@{N\+U\+M\+\_\+\+L\+E\+V\+E\+LS}}
+\index{N\+U\+M\+\_\+\+L\+E\+V\+E\+LS@{N\+U\+M\+\_\+\+L\+E\+V\+E\+LS}!data\+Objects.\+h@{data\+Objects.\+h}}
+\subsubsection{\texorpdfstring{N\+U\+M\+\_\+\+L\+E\+V\+E\+LS}{NUM\_LEVELS}}
+{\footnotesize\ttfamily \#define N\+U\+M\+\_\+\+L\+E\+V\+E\+LS~29}
+
+Contains multiple objects used in transactions\+Fine for 2$^\wedge$\+N\+U\+M\+\_\+\+L\+E\+V\+E\+LS nodes. \mbox{\Hypertarget{dataObjects_8h_aa446fba61d38f15700f9bb749aaee7c9}\label{dataObjects_8h_aa446fba61d38f15700f9bb749aaee7c9}} 
+\index{data\+Objects.\+h@{data\+Objects.\+h}!R\+E\+A\+D\+Y\+\_\+\+F\+O\+R\+\_\+\+F\+R\+EE@{R\+E\+A\+D\+Y\+\_\+\+F\+O\+R\+\_\+\+F\+R\+EE}}
+\index{R\+E\+A\+D\+Y\+\_\+\+F\+O\+R\+\_\+\+F\+R\+EE@{R\+E\+A\+D\+Y\+\_\+\+F\+O\+R\+\_\+\+F\+R\+EE}!data\+Objects.\+h@{data\+Objects.\+h}}
+\subsubsection{\texorpdfstring{R\+E\+A\+D\+Y\+\_\+\+F\+O\+R\+\_\+\+F\+R\+EE}{READY\_FOR\_FREE}}
+{\footnotesize\ttfamily \#define R\+E\+A\+D\+Y\+\_\+\+F\+O\+R\+\_\+\+F\+R\+EE~0x100}
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{dataObjects_8h_a3945a06384f87c28e0642d51b0524e92}\label{dataObjects_8h_a3945a06384f87c28e0642d51b0524e92}} 
+\index{data\+Objects.\+h@{data\+Objects.\+h}!setkey\+\_\+t@{setkey\+\_\+t}}
+\index{setkey\+\_\+t@{setkey\+\_\+t}!data\+Objects.\+h@{data\+Objects.\+h}}
+\subsubsection{\texorpdfstring{setkey\+\_\+t}{setkey\_t}}
+{\footnotesize\ttfamily typedef unsigned long \hyperlink{dataObjects_8h_a3945a06384f87c28e0642d51b0524e92}{setkey\+\_\+t}}
+
+Key used in skip lists \mbox{\Hypertarget{dataObjects_8h_a50648b6d26556a2eb5938738c90e8e14}\label{dataObjects_8h_a50648b6d26556a2eb5938738c90e8e14}} 
+\index{data\+Objects.\+h@{data\+Objects.\+h}!Set\+Op\+Array@{Set\+Op\+Array}}
+\index{Set\+Op\+Array@{Set\+Op\+Array}!data\+Objects.\+h@{data\+Objects.\+h}}
+\subsubsection{\texorpdfstring{Set\+Op\+Array}{SetOpArray}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\hyperlink{structOperator}{Operator}$>$ \hyperlink{dataObjects_8h_a50648b6d26556a2eb5938738c90e8e14}{Set\+Op\+Array}}
+
+A list of Operations \mbox{\Hypertarget{dataObjects_8h_a07e25227a67b4e708996b09fd575408b}\label{dataObjects_8h_a07e25227a67b4e708996b09fd575408b}} 
+\index{data\+Objects.\+h@{data\+Objects.\+h}!setval\+\_\+t@{setval\+\_\+t}}
+\index{setval\+\_\+t@{setval\+\_\+t}!data\+Objects.\+h@{data\+Objects.\+h}}
+\subsubsection{\texorpdfstring{setval\+\_\+t}{setval\_t}}
+{\footnotesize\ttfamily typedef void$\ast$ \hyperlink{dataObjects_8h_a07e25227a67b4e708996b09fd575408b}{setval\+\_\+t}}
+
+Val used in skip lists \mbox{\Hypertarget{dataObjects_8h_a42ab60919a821baeb3b2546676f467aa}\label{dataObjects_8h_a42ab60919a821baeb3b2546676f467aa}} 
+\index{data\+Objects.\+h@{data\+Objects.\+h}!Transactional\+Function@{Transactional\+Function}}
+\index{Transactional\+Function@{Transactional\+Function}!data\+Objects.\+h@{data\+Objects.\+h}}
+\subsubsection{\texorpdfstring{Transactional\+Function}{TransactionalFunction}}
+{\footnotesize\ttfamily typedef \hyperlink{dataObjects_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}($\ast$ Transactional\+Function) (\hyperlink{structDesc}{Desc} $\ast$desc, std\+::map$<$ std\+::string, int $>$ \&)}
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{dataObjects_8h_a20c009e97710992c3cadf8e336e053b1}\label{dataObjects_8h_a20c009e97710992c3cadf8e336e053b1}} 
+\index{data\+Objects.\+h@{data\+Objects.\+h}!Data\+Structure@{Data\+Structure}}
+\index{Data\+Structure@{Data\+Structure}!data\+Objects.\+h@{data\+Objects.\+h}}
+\subsubsection{\texorpdfstring{Data\+Structure}{DataStructure}}
+{\footnotesize\ttfamily enum \hyperlink{dataObjects_8h_a20c009e97710992c3cadf8e336e053b1}{Data\+Structure}}
+
+The enum for the different types of supported lists \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+X\+N\+L\+I\+ST@{T\+X\+N\+L\+I\+ST}!data\+Objects.\+h@{data\+Objects.\+h}}\index{data\+Objects.\+h@{data\+Objects.\+h}!T\+X\+N\+L\+I\+ST@{T\+X\+N\+L\+I\+ST}}}\mbox{\Hypertarget{dataObjects_8h_a20c009e97710992c3cadf8e336e053b1a0af371673f8666000023636a0f869c89}\label{dataObjects_8h_a20c009e97710992c3cadf8e336e053b1a0af371673f8666000023636a0f869c89}} 
+T\+X\+N\+L\+I\+ST&The Transactional Linked List \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+T\+M\+L\+I\+ST@{S\+T\+M\+L\+I\+ST}!data\+Objects.\+h@{data\+Objects.\+h}}\index{data\+Objects.\+h@{data\+Objects.\+h}!S\+T\+M\+L\+I\+ST@{S\+T\+M\+L\+I\+ST}}}\mbox{\Hypertarget{dataObjects_8h_a20c009e97710992c3cadf8e336e053b1ad560f730bc1290d49bc6b0257384eed5}\label{dataObjects_8h_a20c009e97710992c3cadf8e336e053b1ad560f730bc1290d49bc6b0257384eed5}} 
+S\+T\+M\+L\+I\+ST&The R\+S\+TM Linked List \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+S\+T\+L\+I\+ST@{B\+S\+T\+L\+I\+ST}!data\+Objects.\+h@{data\+Objects.\+h}}\index{data\+Objects.\+h@{data\+Objects.\+h}!B\+S\+T\+L\+I\+ST@{B\+S\+T\+L\+I\+ST}}}\mbox{\Hypertarget{dataObjects_8h_a20c009e97710992c3cadf8e336e053b1a55e8de424329601a609b31bb73c932bd}\label{dataObjects_8h_a20c009e97710992c3cadf8e336e053b1a55e8de424329601a609b31bb73c932bd}} 
+B\+S\+T\+L\+I\+ST&The Boost Linked List \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+X\+N\+S\+K\+IP@{T\+X\+N\+S\+K\+IP}!data\+Objects.\+h@{data\+Objects.\+h}}\index{data\+Objects.\+h@{data\+Objects.\+h}!T\+X\+N\+S\+K\+IP@{T\+X\+N\+S\+K\+IP}}}\mbox{\Hypertarget{dataObjects_8h_a20c009e97710992c3cadf8e336e053b1a8b16a732bca8552a5cbaeee7c5b5594f}\label{dataObjects_8h_a20c009e97710992c3cadf8e336e053b1a8b16a732bca8552a5cbaeee7c5b5594f}} 
+T\+X\+N\+S\+K\+IP&The Transactional Skip List \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+S\+T\+S\+K\+IP@{B\+S\+T\+S\+K\+IP}!data\+Objects.\+h@{data\+Objects.\+h}}\index{data\+Objects.\+h@{data\+Objects.\+h}!B\+S\+T\+S\+K\+IP@{B\+S\+T\+S\+K\+IP}}}\mbox{\Hypertarget{dataObjects_8h_a20c009e97710992c3cadf8e336e053b1a16f7d6beda6cde54bc7eff9a278f8c2d}\label{dataObjects_8h_a20c009e97710992c3cadf8e336e053b1a16f7d6beda6cde54bc7eff9a278f8c2d}} 
+B\+S\+T\+S\+K\+IP&The Boost Skip List \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+T\+M\+S\+K\+IP@{S\+T\+M\+S\+K\+IP}!data\+Objects.\+h@{data\+Objects.\+h}}\index{data\+Objects.\+h@{data\+Objects.\+h}!S\+T\+M\+S\+K\+IP@{S\+T\+M\+S\+K\+IP}}}\mbox{\Hypertarget{dataObjects_8h_a20c009e97710992c3cadf8e336e053b1a65192c6fe9b391ed92d29387cc8f6c8d}\label{dataObjects_8h_a20c009e97710992c3cadf8e336e053b1a65192c6fe9b391ed92d29387cc8f6c8d}} 
+S\+T\+M\+S\+K\+IP&The R\+S\+TM Skip List \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+X\+N\+S\+M\+AP@{T\+X\+N\+S\+M\+AP}!data\+Objects.\+h@{data\+Objects.\+h}}\index{data\+Objects.\+h@{data\+Objects.\+h}!T\+X\+N\+S\+M\+AP@{T\+X\+N\+S\+M\+AP}}}\mbox{\Hypertarget{dataObjects_8h_a20c009e97710992c3cadf8e336e053b1ae22fc6b231b11608093dfaa601dc95d0}\label{dataObjects_8h_a20c009e97710992c3cadf8e336e053b1ae22fc6b231b11608093dfaa601dc95d0}} 
+T\+X\+N\+S\+M\+AP&The Transactional Skip List Map \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+X\+N\+L\+M\+AP@{T\+X\+N\+L\+M\+AP}!data\+Objects.\+h@{data\+Objects.\+h}}\index{data\+Objects.\+h@{data\+Objects.\+h}!T\+X\+N\+L\+M\+AP@{T\+X\+N\+L\+M\+AP}}}\mbox{\Hypertarget{dataObjects_8h_a20c009e97710992c3cadf8e336e053b1a33420fa988ed94e329eae5aeeeea4124}\label{dataObjects_8h_a20c009e97710992c3cadf8e336e053b1a33420fa988ed94e329eae5aeeeea4124}} 
+T\+X\+N\+L\+M\+AP&The Transactional List Map \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{dataObjects_8h_af9e675a7980d5ac679b868f4ac463c25}\label{dataObjects_8h_af9e675a7980d5ac679b868f4ac463c25}} 
+\index{data\+Objects.\+h@{data\+Objects.\+h}!Op\+Status@{Op\+Status}}
+\index{Op\+Status@{Op\+Status}!data\+Objects.\+h@{data\+Objects.\+h}}
+\subsubsection{\texorpdfstring{Op\+Status}{OpStatus}}
+{\footnotesize\ttfamily enum \hyperlink{dataObjects_8h_af9e675a7980d5ac679b868f4ac463c25}{Op\+Status}}
+
+The status of a transactional operation \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+C\+T\+I\+VE@{A\+C\+T\+I\+VE}!data\+Objects.\+h@{data\+Objects.\+h}}\index{data\+Objects.\+h@{data\+Objects.\+h}!A\+C\+T\+I\+VE@{A\+C\+T\+I\+VE}}}\mbox{\Hypertarget{dataObjects_8h_af9e675a7980d5ac679b868f4ac463c25a33cf1d8ef1d06ee698a7fabf40eb3a7f}\label{dataObjects_8h_af9e675a7980d5ac679b868f4ac463c25a33cf1d8ef1d06ee698a7fabf40eb3a7f}} 
+A\+C\+T\+I\+VE&Active \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+O\+M\+M\+I\+T\+T\+ED@{C\+O\+M\+M\+I\+T\+T\+ED}!data\+Objects.\+h@{data\+Objects.\+h}}\index{data\+Objects.\+h@{data\+Objects.\+h}!C\+O\+M\+M\+I\+T\+T\+ED@{C\+O\+M\+M\+I\+T\+T\+ED}}}\mbox{\Hypertarget{dataObjects_8h_af9e675a7980d5ac679b868f4ac463c25a9b6890d649a5ed95ee892f10e432e6ac}\label{dataObjects_8h_af9e675a7980d5ac679b868f4ac463c25a9b6890d649a5ed95ee892f10e432e6ac}} 
+C\+O\+M\+M\+I\+T\+T\+ED&Commited \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+B\+O\+R\+T\+ED@{A\+B\+O\+R\+T\+ED}!data\+Objects.\+h@{data\+Objects.\+h}}\index{data\+Objects.\+h@{data\+Objects.\+h}!A\+B\+O\+R\+T\+ED@{A\+B\+O\+R\+T\+ED}}}\mbox{\Hypertarget{dataObjects_8h_af9e675a7980d5ac679b868f4ac463c25a3ae09818606786b529d9ca89180fa29a}\label{dataObjects_8h_af9e675a7980d5ac679b868f4ac463c25a3ae09818606786b529d9ca89180fa29a}} 
+A\+B\+O\+R\+T\+ED&Aborted \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{dataObjects_8h_aa1aa1c6a8f3bbed5b167bc2d4511b969}\label{dataObjects_8h_aa1aa1c6a8f3bbed5b167bc2d4511b969}} 
+\index{data\+Objects.\+h@{data\+Objects.\+h}!Op\+Type@{Op\+Type}}
+\index{Op\+Type@{Op\+Type}!data\+Objects.\+h@{data\+Objects.\+h}}
+\subsubsection{\texorpdfstring{Op\+Type}{OpType}}
+{\footnotesize\ttfamily enum \hyperlink{dataObjects_8h_aa1aa1c6a8f3bbed5b167bc2d4511b969}{Op\+Type}}
+
+The type of operation to perform on a list \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+I\+ND@{F\+I\+ND}!data\+Objects.\+h@{data\+Objects.\+h}}\index{data\+Objects.\+h@{data\+Objects.\+h}!F\+I\+ND@{F\+I\+ND}}}\mbox{\Hypertarget{dataObjects_8h_aa1aa1c6a8f3bbed5b167bc2d4511b969a8f189475707a2b69614aeb6c6904a6df}\label{dataObjects_8h_aa1aa1c6a8f3bbed5b167bc2d4511b969a8f189475707a2b69614aeb6c6904a6df}} 
+F\+I\+ND&Find \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I\+N\+S\+E\+RT@{I\+N\+S\+E\+RT}!data\+Objects.\+h@{data\+Objects.\+h}}\index{data\+Objects.\+h@{data\+Objects.\+h}!I\+N\+S\+E\+RT@{I\+N\+S\+E\+RT}}}\mbox{\Hypertarget{dataObjects_8h_aa1aa1c6a8f3bbed5b167bc2d4511b969aa15c451953b2d2a93403afe786930d0f}\label{dataObjects_8h_aa1aa1c6a8f3bbed5b167bc2d4511b969aa15c451953b2d2a93403afe786930d0f}} 
+I\+N\+S\+E\+RT&Insert \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+E\+L\+E\+TE@{D\+E\+L\+E\+TE}!data\+Objects.\+h@{data\+Objects.\+h}}\index{data\+Objects.\+h@{data\+Objects.\+h}!D\+E\+L\+E\+TE@{D\+E\+L\+E\+TE}}}\mbox{\Hypertarget{dataObjects_8h_aa1aa1c6a8f3bbed5b167bc2d4511b969a9d61e82a9a12752f10aece1b22183913}\label{dataObjects_8h_aa1aa1c6a8f3bbed5b167bc2d4511b969a9d61e82a9a12752f10aece1b22183913}} 
+D\+E\+L\+E\+TE&Delete \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{dataObjects_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}\label{dataObjects_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}} 
+\index{data\+Objects.\+h@{data\+Objects.\+h}!Return\+Code@{Return\+Code}}
+\index{Return\+Code@{Return\+Code}!data\+Objects.\+h@{data\+Objects.\+h}}
+\subsubsection{\texorpdfstring{Return\+Code}{ReturnCode}}
+{\footnotesize\ttfamily enum \hyperlink{dataObjects_8h_a5a2236a3693e3930b2c9fbe1fe7144ec}{Return\+Code}}
+
+The status of an operation on a list \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OK@{OK}!data\+Objects.\+h@{data\+Objects.\+h}}\index{data\+Objects.\+h@{data\+Objects.\+h}!OK@{OK}}}\mbox{\Hypertarget{dataObjects_8h_a5a2236a3693e3930b2c9fbe1fe7144eca2bc49ec37d6a5715dd23e85f1ff5bb59}\label{dataObjects_8h_a5a2236a3693e3930b2c9fbe1fe7144eca2bc49ec37d6a5715dd23e85f1ff5bb59}} 
+OK&Okay \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+K\+IP@{S\+K\+IP}!data\+Objects.\+h@{data\+Objects.\+h}}\index{data\+Objects.\+h@{data\+Objects.\+h}!S\+K\+IP@{S\+K\+IP}}}\mbox{\Hypertarget{dataObjects_8h_a5a2236a3693e3930b2c9fbe1fe7144eca998eded080e73768c0b44bf4891df984}\label{dataObjects_8h_a5a2236a3693e3930b2c9fbe1fe7144eca998eded080e73768c0b44bf4891df984}} 
+S\+K\+IP&Skipped \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+A\+IL@{F\+A\+IL}!data\+Objects.\+h@{data\+Objects.\+h}}\index{data\+Objects.\+h@{data\+Objects.\+h}!F\+A\+IL@{F\+A\+IL}}}\mbox{\Hypertarget{dataObjects_8h_a5a2236a3693e3930b2c9fbe1fe7144eca936c4a5547a9360243178f726f6b2715}\label{dataObjects_8h_a5a2236a3693e3930b2c9fbe1fe7144eca936c4a5547a9360243178f726f6b2715}} 
+F\+A\+IL&Failed \\
+\hline
+
+\end{DoxyEnumFields}

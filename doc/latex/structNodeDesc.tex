@@ -1,0 +1,88 @@
+\hypertarget{structNodeDesc}{}\section{Node\+Desc Struct Reference}
+\label{structNodeDesc}\index{Node\+Desc@{Node\+Desc}}
+
+
+{\ttfamily \#include $<$data\+Objects.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structNodeDesc_ae90ee80d4d5d720a9f383c3d843f62cf}{Node\+Desc} (\hyperlink{structDesc}{Desc} $\ast$\+\_\+desc, \hyperlink{structNodeDesc}{Node\+Desc} $\ast$\+\_\+old\+Node\+Desc, uint8\+\_\+t \+\_\+opid)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static size\+\_\+t \hyperlink{structNodeDesc_a0e3dccc523f4e1129408a038f5b9594b}{Size\+Of} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structDesc}{Desc} $\ast$ \hyperlink{structNodeDesc_aa0ed4419141d13e2e5b9302e9233deff}{desc}
+\item 
+\hyperlink{structNodeDesc}{Node\+Desc} $\ast$ \hyperlink{structNodeDesc_a834f09c58f10092fb5419ac238a38c4f}{previous\+Node\+Desc}
+\item 
+uint8\+\_\+t \hyperlink{structNodeDesc_a7fb5d32e8027ad439d6d096b5031bd89}{opid}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A descriptor for a specific operation. Note\+: because we memalign by type\+Size, the size of this object needs to be a power of 2 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structNodeDesc_ae90ee80d4d5d720a9f383c3d843f62cf}\label{structNodeDesc_ae90ee80d4d5d720a9f383c3d843f62cf}} 
+\index{Node\+Desc@{Node\+Desc}!Node\+Desc@{Node\+Desc}}
+\index{Node\+Desc@{Node\+Desc}!Node\+Desc@{Node\+Desc}}
+\subsubsection{\texorpdfstring{Node\+Desc()}{NodeDesc()}}
+{\footnotesize\ttfamily Node\+Desc\+::\+Node\+Desc (\begin{DoxyParamCaption}\item[{\hyperlink{structDesc}{Desc} $\ast$}]{\+\_\+desc,  }\item[{\hyperlink{structNodeDesc}{Node\+Desc} $\ast$}]{\+\_\+old\+Node\+Desc,  }\item[{uint8\+\_\+t}]{\+\_\+opid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+desc} & The descriptor object \\
+\hline
+{\em \+\_\+old\+Node\+Desc} & The previous node\+Desc that last modified the node. Can be null. \\
+\hline
+{\em \+\_\+opid} & The id of the operation, in other words the index into the operations of the descriptor \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structNodeDesc_a0e3dccc523f4e1129408a038f5b9594b}\label{structNodeDesc_a0e3dccc523f4e1129408a038f5b9594b}} 
+\index{Node\+Desc@{Node\+Desc}!Size\+Of@{Size\+Of}}
+\index{Size\+Of@{Size\+Of}!Node\+Desc@{Node\+Desc}}
+\subsubsection{\texorpdfstring{Size\+Of()}{SizeOf()}}
+{\footnotesize\ttfamily static size\+\_\+t Node\+Desc\+::\+Size\+Of (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Calcuates the size of \hyperlink{structNodeDesc}{Node\+Desc} Note\+: because we memalign by type\+Size, the size of this object needs to be a power of 2
+
+\begin{DoxyReturn}{Returns}
+The size of this descriptor 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structNodeDesc_aa0ed4419141d13e2e5b9302e9233deff}\label{structNodeDesc_aa0ed4419141d13e2e5b9302e9233deff}} 
+\index{Node\+Desc@{Node\+Desc}!desc@{desc}}
+\index{desc@{desc}!Node\+Desc@{Node\+Desc}}
+\subsubsection{\texorpdfstring{desc}{desc}}
+{\footnotesize\ttfamily \hyperlink{structDesc}{Desc}$\ast$ Node\+Desc\+::desc}
+
+The descriptor object \mbox{\Hypertarget{structNodeDesc_a7fb5d32e8027ad439d6d096b5031bd89}\label{structNodeDesc_a7fb5d32e8027ad439d6d096b5031bd89}} 
+\index{Node\+Desc@{Node\+Desc}!opid@{opid}}
+\index{opid@{opid}!Node\+Desc@{Node\+Desc}}
+\subsubsection{\texorpdfstring{opid}{opid}}
+{\footnotesize\ttfamily uint8\+\_\+t Node\+Desc\+::opid}
+
+The id of the operation \mbox{\Hypertarget{structNodeDesc_a834f09c58f10092fb5419ac238a38c4f}\label{structNodeDesc_a834f09c58f10092fb5419ac238a38c4f}} 
+\index{Node\+Desc@{Node\+Desc}!previous\+Node\+Desc@{previous\+Node\+Desc}}
+\index{previous\+Node\+Desc@{previous\+Node\+Desc}!Node\+Desc@{Node\+Desc}}
+\subsubsection{\texorpdfstring{previous\+Node\+Desc}{previousNodeDesc}}
+{\footnotesize\ttfamily \hyperlink{structNodeDesc}{Node\+Desc}$\ast$ Node\+Desc\+::previous\+Node\+Desc}
+
+The previous descriptor object the node referenced before the current descriptor replaced it 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/translink/data\+Objects.\+h\end{DoxyCompactItemize}

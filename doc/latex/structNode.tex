@@ -1,0 +1,104 @@
+\hypertarget{structNode}{}\section{Node Struct Reference}
+\label{structNode}\index{Node@{Node}}
+
+
+{\ttfamily \#include $<$data\+Objects.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structNode_ad7a34779cad45d997bfd6d3d8043c75f}{Node} ()
+\item 
+\hyperlink{structNode_a9f1ed45afe640a4e113f264c424c28b0}{Node} (setkey\+\_\+t \+\_\+key, \hyperlink{structNode}{Node} $\ast$\+\_\+next, \hyperlink{structNodeDesc}{Node\+Desc} $\ast$\+\_\+node\+Desc)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static size\+\_\+t \hyperlink{structNode_ac6efad16dddc643b5990ef1c676d9c48}{Size\+Of} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{structNode_a8728a644d0aa9bcc8fc6a6f935077277}{level}
+\item 
+setkey\+\_\+t \hyperlink{structNode_a3499b8b8442463365dd1cb7bce41b3d5}{key}
+\item 
+\hyperlink{structNodeDesc}{Node\+Desc} $\ast$ \hyperlink{structNode_aa147c0f286a8b3913347af793b6c8a57}{node\+Desc}
+\item 
+\hyperlink{structNode}{Node} $\ast$ \hyperlink{structNode_ad97b8a94c8f12b5f679ba5318e268733}{next} \mbox{[}N\+U\+M\+\_\+\+L\+E\+V\+E\+LS\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A generic node object for a list. Note\+: because we memalign by type\+Size, the size of this object needs to be a power of 2 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structNode_ad7a34779cad45d997bfd6d3d8043c75f}\label{structNode_ad7a34779cad45d997bfd6d3d8043c75f}} 
+\index{Node@{Node}!Node@{Node}}
+\index{Node@{Node}!Node@{Node}}
+\subsubsection{\texorpdfstring{Node()}{Node()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Node\+::\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor \mbox{\Hypertarget{structNode_a9f1ed45afe640a4e113f264c424c28b0}\label{structNode_a9f1ed45afe640a4e113f264c424c28b0}} 
+\index{Node@{Node}!Node@{Node}}
+\index{Node@{Node}!Node@{Node}}
+\subsubsection{\texorpdfstring{Node()}{Node()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Node\+::\+Node (\begin{DoxyParamCaption}\item[{setkey\+\_\+t}]{\+\_\+key,  }\item[{\hyperlink{structNode}{Node} $\ast$}]{\+\_\+next,  }\item[{\hyperlink{structNodeDesc}{Node\+Desc} $\ast$}]{\+\_\+node\+Desc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+key} & The key for the node \\
+\hline
+{\em \+\_\+next} & A pointer to the next node \\
+\hline
+{\em \+\_\+node\+Desc} & A reference to the node descriptor \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structNode_ac6efad16dddc643b5990ef1c676d9c48}\label{structNode_ac6efad16dddc643b5990ef1c676d9c48}} 
+\index{Node@{Node}!Size\+Of@{Size\+Of}}
+\index{Size\+Of@{Size\+Of}!Node@{Node}}
+\subsubsection{\texorpdfstring{Size\+Of()}{SizeOf()}}
+{\footnotesize\ttfamily static size\+\_\+t Node\+::\+Size\+Of (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Calcuates the size of \hyperlink{structNode}{Node} Note\+: because we memalign by type\+Size, the size of this object needs to be a power of 2
+
+\begin{DoxyReturn}{Returns}
+The size of this descriptor 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structNode_a3499b8b8442463365dd1cb7bce41b3d5}\label{structNode_a3499b8b8442463365dd1cb7bce41b3d5}} 
+\index{Node@{Node}!key@{key}}
+\index{key@{key}!Node@{Node}}
+\subsubsection{\texorpdfstring{key}{key}}
+{\footnotesize\ttfamily setkey\+\_\+t Node\+::key}
+
+The value of the node (used in skip lists) The key of the node (for transactions) \mbox{\Hypertarget{structNode_a8728a644d0aa9bcc8fc6a6f935077277}\label{structNode_a8728a644d0aa9bcc8fc6a6f935077277}} 
+\index{Node@{Node}!level@{level}}
+\index{level@{level}!Node@{Node}}
+\subsubsection{\texorpdfstring{level}{level}}
+{\footnotesize\ttfamily int Node\+::level}
+
+The level of the node, used in skip lists \mbox{\Hypertarget{structNode_ad97b8a94c8f12b5f679ba5318e268733}\label{structNode_ad97b8a94c8f12b5f679ba5318e268733}} 
+\index{Node@{Node}!next@{next}}
+\index{next@{next}!Node@{Node}}
+\subsubsection{\texorpdfstring{next}{next}}
+{\footnotesize\ttfamily \hyperlink{structNode}{Node}$\ast$ Node\+::next\mbox{[}N\+U\+M\+\_\+\+L\+E\+V\+E\+LS\mbox{]}}
+
+The pointer to the next node \mbox{\Hypertarget{structNode_aa147c0f286a8b3913347af793b6c8a57}\label{structNode_aa147c0f286a8b3913347af793b6c8a57}} 
+\index{Node@{Node}!node\+Desc@{node\+Desc}}
+\index{node\+Desc@{node\+Desc}!Node@{Node}}
+\subsubsection{\texorpdfstring{node\+Desc}{nodeDesc}}
+{\footnotesize\ttfamily \hyperlink{structNodeDesc}{Node\+Desc}$\ast$ Node\+::node\+Desc}
+
+A reference to the node descriptor 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/translink/data\+Objects.\+h\end{DoxyCompactItemize}

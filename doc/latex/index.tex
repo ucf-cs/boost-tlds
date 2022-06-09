@@ -1,0 +1,148 @@
+\hypertarget{index_intro_sec}{}\section{Preface}\label{index_intro_sec}
+This documentation is presented in doxygen format to view the important components of L\+F\+D\+TT. This instruction guide to using L\+F\+D\+TT as an external library that is able to be included from the C++ boost library is currently not supported. This guide allows parts of the code to be explained separately, simply through objects and functions by building the program.
+
+As it is currently not supported as a library, there are necessary steps before using the L\+F\+D\+TT code along with testing tools that are also provided. This guide will provide the instructions to utilize the L\+F\+D\+TT codebase and tools that it provides. The documentation will also cover the basic implementation of the code so that a user will be able to properly use and implement their code along with the codebase.
+
+Simply begin viewing the documentation through the navigation bar. By clicking on one of the classes, it will present the name of the class/struct along with the file with which it belongs to. They will list the functions and attributes/variables that belong to that reference. By scrolling down, it will explain what the parameters and return values are for each function. Some classes will contain member variables which will also contain a brief description of what they represent.\hypertarget{index_installation}{}\section{Installation Guide}\label{index_installation}
+The instructions for installing dependices were used in the Ubuntu distribution 18.\+04.\+1 for Linux at the time of this documentation (April 2019). It may be different for some operating systems.\hypertarget{index_step1}{}\subsection{Install Dependencies}\label{index_step1}
+sudo apt-\/get install libboost-\/all-\/dev libgoogle-\/perftools-\/dev libtool m4 automake cmake libtbb-\/dev libgsl0-\/dev ~\newline
+ OR ~\newline
+ sudo apt-\/get install libboost-\/all-\/dev ~\newline
+ sudo apt-\/get install libgoogle-\/perftools-\/dev~\newline
+ sudo apt-\/get install libtool m4 automake~\newline
+ sudo apt-\/get install cmake ~\newline
+ sudo apt-\/get install libtbb-\/dev ~\newline
+ sudo apt-\/get install libgs10-\/dev~\newline
+\hypertarget{index_step2}{}\subsection{Install G\+CC}\label{index_step2}
+sudo apt-\/get update \&\& \textbackslash{} ~\newline
+ sudo apt-\/get install build-\/essential software-\/properties-\/common -\/y \&\& \textbackslash{} ~\newline
+ sudo add-\/apt-\/repository ppa\+:ubuntu-\/toolchain-\/r/test -\/y \&\& \textbackslash{} ~\newline
+ sudo apt-\/get update \&\& \textbackslash{} ~\newline
+ sudo apt-\/get install gcc-\/snapshot -\/y \&\& \textbackslash{} ~\newline
+ sudo apt-\/get update \&\& \textbackslash{} ~\newline
+ sudo apt-\/get install gcc-\/7 g++-\/7 -\/y \&\& \textbackslash{} ~\newline
+ sudo update-\/alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-\/7 60 --slave /usr/bin/g++ g++ /usr/bin/g++-\/7 \&\& \textbackslash{} ~\newline
+ sudo apt-\/get install gcc-\/4.\+8 g++-\/4.8 -\/y \&\& \textbackslash{} ~\newline
+ sudo update-\/alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-\/4.8 60 --slave /usr/bin/g++ g++ /usr/bin/g++-\/4.8; ~\newline
+ sudo update-\/alternatives --config gcc ~\newline
+ gcc -\/v ~\newline
+\hypertarget{index_step3}{}\subsection{Install P\+E\+R\+F (\+Possibly needed, please check to see if installed already)}\label{index_step3}
+sudo apt-\/get install libgoogle-\/perftools-\/dev ~\newline
+ sudo apt install linux-\/tools-\/common gawk ~\newline
+ sudo apt-\/get install linux-\/tools-\/generic ~\newline
+ sudo apt-\/get install linux-\/tools-\/4.\+13.\+0-\/45-\/generic ~\newline
+ sudo apt-\/get install linux-\/cloud-\/tools-\/4.\+13.\+0-\/45-\/generic ~\newline
+\hypertarget{index_step4}{}\subsection{Get from Github}\label{index_step4}
+mkdir temp ~\newline
+ cd temp ~\newline
+ git clone \href{https://github.com/ucfcs/Fall2018-Group42-boost-tlds.git}{\tt https\+://github.\+com/ucfcs/\+Fall2018-\/\+Group42-\/boost-\/tlds.\+git} ~\newline
+ (change \char`\"{}temp\char`\"{} folder name to \char`\"{}trans-\/dev\char`\"{}) ~\newline
+ cd trans-\/dev ~\newline
+ bash bootstrap.\+sh ~\newline
+ cd ../trans-\/compile ~\newline
+ ../trans-\/dev/configure ~\newline
+\hypertarget{index_step5}{}\subsection{M\+A\+K\+E and T\+E\+ST}\label{index_step5}
+cd trans-\/compile ~\newline
+ make -\/j8 ~\newline
+ cd trans-\/dev/script ~\newline
+ python pqtest.\+py ../../trans-\/compile/src/trans ~\newline
+\hypertarget{index_step6}{}\subsection{D\+E\+B\+UG}\label{index_step6}
+cd trans-\/compile ~\newline
+ make -\/j8 C\+X\+X\+F\+L\+A\+GS=\textquotesingle{}-\/\+O0 -\/g\textquotesingle{} ~\newline
+ cd src ~\newline
+
+
+gdb --args ./trans $<$data-\/structure$>$ $<$nthreads$>$ $<$iterations$>$ $<$txn-\/size$>$ $<$key-\/range$>$ $<$percent-\/insert$>$ $<$percent-\/delete$>$ ~\newline
+ OR ~\newline
+ libtool --mode=execute gdb trans ~\newline
+ OR ~\newline
+ gdb ./trans ~\newline
+\hypertarget{index_usage_sec}{}\section{How to use L\+F\+D\+TT}\label{index_usage_sec}
+The current L\+F\+D\+TT codebase is applicable toward the implementation of list and map datastructures. Three operations supported are the Find, Insert, and Delete operations. There is a main file in the bench directory provided to showcase how the codebase can be implemented to act on those operations.
+
+To begin, create a new \hyperlink{classTransactionHandler}{Transaction\+Handler} object by passing in the number of tests to run, the number of threads to use, the number of transactions per test, and the number of containers per test into the constructor.~\newline
+
+
+Next, create a new \hyperlink{classTransactionalContainer}{Transactional\+Container} object and set the mentioned Transactional\+Handler class to the transaction inside the container. This is done simply to reference all the method calls in reference to the list.\hypertarget{index_function_pointer}{}\subsection{Creating the Function Pointers}\label{index_function_pointer}
+There are prerequisites to using the current implementation of creating function pointers.\+The function pointers have to be wrapped in a class that has to be created in order to contain information regarding 1) the datastructure list(s) itself noted as Transaction\+Container, and 2) the information regarding transactions in order to call transaction based methods noted as \+\_\+txn. Both of these local variables are set outside of the class to reference them after the transactional execution. Shown below is a quick implementation of how to create function pointers\+:
+
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include "translink/transaction.h"}
+
+\textcolor{keyword}{class }TxnFuncTester
+\{
+\textcolor{keyword}{public}:
+     \textcolor{keyword}{inline} \textcolor{keyword}{static} std::vector<TransactionalContainer*> \_list;
+     
+     \textcolor{keyword}{inline} \textcolor{keyword}{static} \hyperlink{classTransactionHandler}{TransactionHandler}* \_txn;
+
+     \textcolor{keyword}{static} ReturnCode MyTxnFunction(\hyperlink{structDesc}{Desc}* desc, std::map<std::string, int>& inputMap)\{
+\textcolor{preprocessor}{#ifdef DEBUG}
+         printf(\textcolor{stringliteral}{"Input map 'x': %d\(\backslash\)n"}, inputMap[\textcolor{stringliteral}{"x"}]);
+\textcolor{preprocessor}{#endif}
+         \textcolor{keywordtype}{int} foundValue = 0;
+
+         ReturnCode retCode = TxnFuncTester::\_txn->CallOps(desc, TxnFuncTester::\_list[0], INSERT, 1, 1, 
+      foundValue);
+\textcolor{preprocessor}{#ifdef DEBUG     }
+         \textcolor{keywordflow}{if} (retCode == OK)
+             printf(\textcolor{stringliteral}{"INSERT SUCCESSFUL\(\backslash\)n"});
+         \textcolor{keywordflow}{else}
+             printf(\textcolor{stringliteral}{"FAILED OR SKIPPED\(\backslash\)n"});
+\textcolor{preprocessor}{#endif}
+         inputMap[\textcolor{stringliteral}{"value"}] = 100;
+
+         \textcolor{keywordflow}{return} OK;
+     \}
+\}
+\end{DoxyCode}
+\hypertarget{index_operation_Calls}{}\subsection{Calling Operations}\label{index_operation_Calls}
+Calling operations are only done within the function pointers. Shown in the \hyperlink{index_function_pointer}{Creating the Function Pointers} section will provide a a quick implmentation on operation calls. The last argument of Call\+Ops() found\+Value is used only in the F\+I\+ND operation but will need to be included when using the method. See more details regarding Find() in \hyperlink{index_using_Find}{Find Operation}.\hypertarget{index_operation_Execution}{}\subsection{Executing Operations as Transactions}\label{index_operation_Execution}
+In order to execute operations, we need to pass in a function pointer that contains the operations to perform on the datastructure list, an input map, and an a reference to the output map. 
+\begin{DoxyCode}
+ExecuteOps(\textcolor{keyword}{const} TransactionalFunction txnFunction, std::map<std::string, int>* inputMap, 
+      std::map<std::string, int>** outputMap)
+\end{DoxyCode}
+ Once Executeops() is called, it will handle storing the data into the descriptor object which will then call Help\+Ops() proceeding to call the function pointer inside Help\+Ops().\hypertarget{index_using_Find}{}\subsection{Find Operation}\label{index_using_Find}
+In order to call Find(), simply pass it in as F\+I\+ND into the third parameter of Call\+Ops().
+
+
+\begin{DoxyItemize}
+\item It returns OK if the key is found and stores the value at the node into the value variable.~\newline
+
+\item It returns S\+K\+IP if another thread may be executing on the node.~\newline
+
+\item It returns F\+A\+IL if the key cannot be found.~\newline
+
+\end{DoxyItemize}
+
+The definition of Find() can be found here \hyperlink{classTransactionalContainer}{Transactional\+Container}.\hypertarget{index_using_Insert}{}\subsection{Insert Operation}\label{index_using_Insert}
+In order to call Insert(), simply pass it in as I\+N\+S\+E\+RT into the third parameter of Call\+Ops().
+
+
+\begin{DoxyItemize}
+\item It returns OK if the key is successfully inserted along with the value.~\newline
+
+\item It returns S\+K\+IP if another thread may be executing on the node.~\newline
+
+\item It returns F\+A\+IL if the key exists and cannot be inserted.~\newline
+
+\end{DoxyItemize}
+
+The definition of Insert can be found here \hyperlink{classTransactionalContainer}{Transactional\+Container}.\hypertarget{index_using_Delete}{}\subsection{Delete Operation}\label{index_using_Delete}
+In order to call Delete(), simply pass it in as D\+E\+L\+E\+TE into the third parameter of Call\+Ops().
+
+
+\begin{DoxyItemize}
+\item It returns OK if the key is successfully deleted.~\newline
+
+\item It returns S\+K\+IP if another thread may be executing on the node.~\newline
+
+\item It returns F\+A\+IL if the key cannot be found and deleted.~\newline
+
+\end{DoxyItemize}
+
+The definition of Delete() can be found here \hyperlink{classTransactionalContainer}{Transactional\+Container}.
+
+This concludes the guide. 

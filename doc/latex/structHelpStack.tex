@@ -1,0 +1,105 @@
+\hypertarget{structHelpStack}{}\section{Help\+Stack Struct Reference}
+\label{structHelpStack}\index{Help\+Stack@{Help\+Stack}}
+
+
+{\ttfamily \#include $<$data\+Objects.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{structHelpStack_ae91b62881ed5760e04f36a858d775fed}{Init} ()
+\item 
+void \hyperlink{structHelpStack_a184dc0935dc30b94113a938d4ab7fe28}{Push} (\hyperlink{structDesc}{Desc} $\ast$desc)
+\item 
+void \hyperlink{structHelpStack_a1e027e2dcf0c4bec15add32c0f04377a}{Pop} ()
+\item 
+bool \hyperlink{structHelpStack_a7fa3dd720f64464467158a74ac7c19c1}{Contain} (\hyperlink{structDesc}{Desc} $\ast$desc)
+\item 
+\mbox{\Hypertarget{structHelpStack_a68d62237f56f9512723baa44d9636175}\label{structHelpStack_a68d62237f56f9512723baa44d9636175}} 
+void {\bfseries New\+Op} ()
+\item 
+\mbox{\Hypertarget{structHelpStack_a864b787b748f3a56124c7ce548bd8f31}\label{structHelpStack_a864b787b748f3a56124c7ce548bd8f31}} 
+uint8\+\_\+t {\bfseries Get\+Op\+Id} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structDesc}{Desc} $\ast$ \hyperlink{structHelpStack_a3b2078f79f39ba359f323d75968cbed0}{helps} \mbox{[}256\mbox{]}
+\item 
+uint8\+\_\+t \hyperlink{structHelpStack_a334edfc6ddcf054de46a50c34174d593}{op\+Ids} \mbox{[}256\mbox{]}
+\item 
+uint8\+\_\+t \hyperlink{structHelpStack_a0e5d134dcafa9ab20ea25b11b9bc0175}{index}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A stack used to help pending operations 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structHelpStack_a7fa3dd720f64464467158a74ac7c19c1}\label{structHelpStack_a7fa3dd720f64464467158a74ac7c19c1}} 
+\index{Help\+Stack@{Help\+Stack}!Contain@{Contain}}
+\index{Contain@{Contain}!Help\+Stack@{Help\+Stack}}
+\subsubsection{\texorpdfstring{Contain()}{Contain()}}
+{\footnotesize\ttfamily bool Help\+Stack\+::\+Contain (\begin{DoxyParamCaption}\item[{\hyperlink{structDesc}{Desc} $\ast$}]{desc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks if the stack contains the descriptor
+
+
+\begin{DoxyParams}{Parameters}
+{\em desc} & The descriptor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the stack contains the descriptor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structHelpStack_ae91b62881ed5760e04f36a858d775fed}\label{structHelpStack_ae91b62881ed5760e04f36a858d775fed}} 
+\index{Help\+Stack@{Help\+Stack}!Init@{Init}}
+\index{Init@{Init}!Help\+Stack@{Help\+Stack}}
+\subsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Help\+Stack\+::\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Initialization \mbox{\Hypertarget{structHelpStack_a1e027e2dcf0c4bec15add32c0f04377a}\label{structHelpStack_a1e027e2dcf0c4bec15add32c0f04377a}} 
+\index{Help\+Stack@{Help\+Stack}!Pop@{Pop}}
+\index{Pop@{Pop}!Help\+Stack@{Help\+Stack}}
+\subsubsection{\texorpdfstring{Pop()}{Pop()}}
+{\footnotesize\ttfamily void Help\+Stack\+::\+Pop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\char`\"{}\+Pops\char`\"{} the top of the stack. (Decrements the index) \mbox{\Hypertarget{structHelpStack_a184dc0935dc30b94113a938d4ab7fe28}\label{structHelpStack_a184dc0935dc30b94113a938d4ab7fe28}} 
+\index{Help\+Stack@{Help\+Stack}!Push@{Push}}
+\index{Push@{Push}!Help\+Stack@{Help\+Stack}}
+\subsubsection{\texorpdfstring{Push()}{Push()}}
+{\footnotesize\ttfamily void Help\+Stack\+::\+Push (\begin{DoxyParamCaption}\item[{\hyperlink{structDesc}{Desc} $\ast$}]{desc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Pushes the descriptor onto the stack
+
+
+\begin{DoxyParams}{Parameters}
+{\em desc} & The descriptor \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structHelpStack_a3b2078f79f39ba359f323d75968cbed0}\label{structHelpStack_a3b2078f79f39ba359f323d75968cbed0}} 
+\index{Help\+Stack@{Help\+Stack}!helps@{helps}}
+\index{helps@{helps}!Help\+Stack@{Help\+Stack}}
+\subsubsection{\texorpdfstring{helps}{helps}}
+{\footnotesize\ttfamily \hyperlink{structDesc}{Desc}$\ast$ Help\+Stack\+::helps\mbox{[}256\mbox{]}}
+
+The help stack \mbox{\Hypertarget{structHelpStack_a0e5d134dcafa9ab20ea25b11b9bc0175}\label{structHelpStack_a0e5d134dcafa9ab20ea25b11b9bc0175}} 
+\index{Help\+Stack@{Help\+Stack}!index@{index}}
+\index{index@{index}!Help\+Stack@{Help\+Stack}}
+\subsubsection{\texorpdfstring{index}{index}}
+{\footnotesize\ttfamily uint8\+\_\+t Help\+Stack\+::index}
+
+The current index of the help stack \mbox{\Hypertarget{structHelpStack_a334edfc6ddcf054de46a50c34174d593}\label{structHelpStack_a334edfc6ddcf054de46a50c34174d593}} 
+\index{Help\+Stack@{Help\+Stack}!op\+Ids@{op\+Ids}}
+\index{op\+Ids@{op\+Ids}!Help\+Stack@{Help\+Stack}}
+\subsubsection{\texorpdfstring{op\+Ids}{opIds}}
+{\footnotesize\ttfamily uint8\+\_\+t Help\+Stack\+::op\+Ids\mbox{[}256\mbox{]}}
+
+The operation I\+Ds 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/translink/data\+Objects.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,120 @@
+\hypertarget{classTransactionalContainer}{}\section{Transactional\+Container Class Reference}
+\label{classTransactionalContainer}\index{Transactional\+Container@{Transactional\+Container}}
+
+
+{\ttfamily \#include $<$Txn\+List.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Return\+Code \hyperlink{classTransactionalContainer_a4154c375844a863a4c5692125a1d22a7}{Insert} (setkey\+\_\+t key, \hyperlink{structDesc}{Desc} $\ast$desc, uint8\+\_\+t opid, \hyperlink{structNode}{Node} $\ast$\&inserted, \hyperlink{structNode}{Node} $\ast$\&pred)=0
+\item 
+virtual Return\+Code \hyperlink{classTransactionalContainer_a3018917719372e1ddf3bf7adbdcdfa7b}{Delete} (setkey\+\_\+t key, \hyperlink{structDesc}{Desc} $\ast$desc, uint8\+\_\+t opid, \hyperlink{structNode}{Node} $\ast$\&deleted, \hyperlink{structNode}{Node} $\ast$\&pred)=0
+\item 
+virtual Return\+Code \hyperlink{classTransactionalContainer_ab02a3c0cce9358190316e0e52f80e100}{Find} (setkey\+\_\+t key, \hyperlink{structDesc}{Desc} $\ast$desc, uint8\+\_\+t opid, int \&value)=0
+\item 
+virtual void \hyperlink{classTransactionalContainer_a5e8c0c1afa2343866f259f9dec8dfe61}{Init} ()=0
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTransactionHandler}{Transaction\+Handler} $\ast$ \hyperlink{classTransactionalContainer_a78f2a4bc185a5052d705c1be8e5b016b}{transaction}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Transaction List abstract class
+
+This class provides an abstact interface for abstract data types wanting to support transactions 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classTransactionalContainer_a3018917719372e1ddf3bf7adbdcdfa7b}\label{classTransactionalContainer_a3018917719372e1ddf3bf7adbdcdfa7b}} 
+\index{Transactional\+Container@{Transactional\+Container}!Delete@{Delete}}
+\index{Delete@{Delete}!Transactional\+Container@{Transactional\+Container}}
+\subsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily virtual Return\+Code Transactional\+Container\+::\+Delete (\begin{DoxyParamCaption}\item[{setkey\+\_\+t}]{key,  }\item[{\hyperlink{structDesc}{Desc} $\ast$}]{desc,  }\item[{uint8\+\_\+t}]{opid,  }\item[{\hyperlink{structNode}{Node} $\ast$\&}]{deleted,  }\item[{\hyperlink{structNode}{Node} $\ast$\&}]{pred }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Deletes a node from the list
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key of the operation this insert is apart of \\
+\hline
+{\em desc} & The Descriptor object describing this operation \\
+\hline
+{\em opid} & The id (index) of the operation in the descriptor \\
+\hline
+{\em deleted} & The node that was deleted \\
+\hline
+{\em pred} & The predecessor node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Return\+Code of the final status of the operation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTransactionalContainer_ab02a3c0cce9358190316e0e52f80e100}\label{classTransactionalContainer_ab02a3c0cce9358190316e0e52f80e100}} 
+\index{Transactional\+Container@{Transactional\+Container}!Find@{Find}}
+\index{Find@{Find}!Transactional\+Container@{Transactional\+Container}}
+\subsubsection{\texorpdfstring{Find()}{Find()}}
+{\footnotesize\ttfamily virtual Return\+Code Transactional\+Container\+::\+Find (\begin{DoxyParamCaption}\item[{setkey\+\_\+t}]{key,  }\item[{\hyperlink{structDesc}{Desc} $\ast$}]{desc,  }\item[{uint8\+\_\+t}]{opid,  }\item[{int \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Finds a node in the list
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key of the operation this insert is apart of \\
+\hline
+{\em desc} & The Descriptor object describing this operation \\
+\hline
+{\em opid} & The id (index) of the operation in the descriptor \\
+\hline
+{\em value} & A reference to the value to set if we find the key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Return\+Code of the final status of the operation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTransactionalContainer_a5e8c0c1afa2343866f259f9dec8dfe61}\label{classTransactionalContainer_a5e8c0c1afa2343866f259f9dec8dfe61}} 
+\index{Transactional\+Container@{Transactional\+Container}!Init@{Init}}
+\index{Init@{Init}!Transactional\+Container@{Transactional\+Container}}
+\subsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily virtual void Transactional\+Container\+::\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Initializes any thread specific subsystems such as memory allocators or garbage collectors \mbox{\Hypertarget{classTransactionalContainer_a4154c375844a863a4c5692125a1d22a7}\label{classTransactionalContainer_a4154c375844a863a4c5692125a1d22a7}} 
+\index{Transactional\+Container@{Transactional\+Container}!Insert@{Insert}}
+\index{Insert@{Insert}!Transactional\+Container@{Transactional\+Container}}
+\subsubsection{\texorpdfstring{Insert()}{Insert()}}
+{\footnotesize\ttfamily virtual Return\+Code Transactional\+Container\+::\+Insert (\begin{DoxyParamCaption}\item[{setkey\+\_\+t}]{key,  }\item[{\hyperlink{structDesc}{Desc} $\ast$}]{desc,  }\item[{uint8\+\_\+t}]{opid,  }\item[{\hyperlink{structNode}{Node} $\ast$\&}]{inserted,  }\item[{\hyperlink{structNode}{Node} $\ast$\&}]{pred }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Inserts a node into the list
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key of the operation this insert is apart of \\
+\hline
+{\em desc} & The Descriptor object describing this operation \\
+\hline
+{\em opid} & The id (index) of the operation in the descriptor \\
+\hline
+{\em inserted} & The node that was inserted \\
+\hline
+{\em pred} & The predecessor node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Return\+Code of the final status of the operation 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classTransactionalContainer_a78f2a4bc185a5052d705c1be8e5b016b}\label{classTransactionalContainer_a78f2a4bc185a5052d705c1be8e5b016b}} 
+\index{Transactional\+Container@{Transactional\+Container}!transaction@{transaction}}
+\index{transaction@{transaction}!Transactional\+Container@{Transactional\+Container}}
+\subsubsection{\texorpdfstring{transaction}{transaction}}
+{\footnotesize\ttfamily \hyperlink{classTransactionHandler}{Transaction\+Handler}$\ast$ Transactional\+Container\+::transaction}
+
+The reference to the transaction object 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/translink/Txn\+List.\+h\end{DoxyCompactItemize}
